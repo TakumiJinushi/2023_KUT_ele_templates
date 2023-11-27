@@ -1,20 +1,21 @@
-# 2023年度 高知工科大学 電子系 卒業論文・特別研究報告の LuaTeX テンプレート
+# 2023年度 高知工科大学 電子系 卒業論文・特別研究報告の pLaTeX テンプレート
 
 ## <span style="color: red; ">注意点</span>
 このテンプレートは2023年度高知工科大学電子系の卒業論文・修士論文の要件を満たすように作成したつもりですが、今一度[KUTLMS](https://lms.kochi-tech.ac.jp/)で学位論文の要件を確認して下さい．作成者はこのテンプレートを用いることによる不利益に関しては保証
 しかねるのでご容赦を。。。
 
 ## このテンプレートでのコンパイラ
-コンパイラは [LuaTeX-ja](https://texwiki.texjp.org/?LuaTeX-ja) を採用しています．
-[Overleaf](https://www.overleaf.com)や[Cloud LaTeX](https://cloudlatex.io)を用いる際は「Compiler」か「LaTeX Engine」と書かれている箇所で「LuaLaTeX」や「lualatex」を選択してください．詳細は，[Tutorials - Overleaf, Online LaTeX Editor](https://www.overleaf.com/learn/latex/Tutorials)や[Cloud LaTeX の登録の仕方・使い方](https://cloudlatex.io/how-to-use-cl)に記載されています（2023年11月現在）．
+コンパイラは [pLaTeX2e](https://oku.edu.mie-u.ac.jp/~okumura/jsclasses/) を採用しています．
+[Overleaf](https://www.overleaf.com)や[Cloud LaTeX](https://cloudlatex.io)を用いる際は「Compiler」か「LaTeX Engine」と書かれている箇所で「LaTeX」や「platex」を選択してください．詳細は，[Tutorials - Overleaf, Online LaTeX Editor](https://www.overleaf.com/learn/latex/Tutorials)や[Cloud LaTeX の登録の仕方・使い方](https://cloudlatex.io/how-to-use-cl)に記載されています（2023年11月現在）．
 
 ## 各種フォルダ・ファイル
 - figures: 図が入っているフォルダです
-  - biblatex_settings.png: main_LuaTeX.tex内のbiblatexの設定をスクリーンショットで撮影したものです
+  - biblatex_settings.png: main_pLaTeX.tex内のbiblatexの設定をスクリーンショットで撮影したものです
   - header.png: ヘッダー・フッターの出力確認の図です
+  - jlreq_settings.png: jlreqの追加設定です
   - method.png: appendixA.tex内の手順を図示したスクリーンショットです
-  - nomble.png: main_LuaTeX.tex内のヘッダー・フッターの設定をスクリーンショットで撮影したものです
-  - picture.pdf: method.pngでは描画.pdfだったが，エラー回避のためにpicture.pdfに変更
+  - nomble.png: main_pLaTeX.tex内のヘッダー・フッターの設定をスクリーンショットで撮影したものです
+  - picture.pdf: method.pngでは描画.pdfだったが，エラー回避のためにpicture.pdfに変更しました
   - ref_series.png: 参考文献[3]，[4]の引用順を確認する図です．
   - verification_of_graduation.png: 学位論文報告者の情報を記載する箇所のスクリーンショットです
 
@@ -25,8 +26,8 @@
 - chapter1.tex: 第1章の内容を記載したTeXファイルです
 - chapter2.tex: 第2章の内容を記載したTeXファイルです
 - cover.tex: 表紙の制御を行なっているTeXファイルです
-- KUT_ele_LuaTeX_ver.pdf: 出力されたPDFファイルです
-- main_LuaTeX.tex: TeXファイル全体を制御するファイルです
+- KUT_ele_pLaTeX_ver.pdf: 出力されたPDFファイルです
+- main_pLaTeX.tex: TeXファイル全体を制御するファイルです
 - README.md: 内容物の説明で，このファイルのことです
 - references.bib: 参考文献を入れるbibファイルです
 
@@ -64,7 +65,3 @@ TeXでの執筆時に役立つリンク集（2023年11月現在）
 ## 連絡先
 高知工科大学大学院 電子・光工学専攻 2年　地主拓未 (2023年11月現在)
 E-mail: takumi.jinushi (あっと) gmail.com
-
-
-## 履歴
-- 2023.11.27 ver0.001公開

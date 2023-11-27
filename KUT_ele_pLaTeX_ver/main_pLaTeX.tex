@@ -1,0 +1,117 @@
+% ======== 学位論文 ========= %
+\RequirePackage{plautopatch}
+\RequirePackage[l2tabu, orthodox]{nag}           % 古いものを一掃
+\documentclass[platex, report, a4paper, 12pt, openany, twoside, dvipdfmx]{jlreq} % jlreqを用いる場合
+% =======  プリアンブル ======== %
+\usepackage{graphicx}                            % グラフ描画
+\usepackage{xcolor}                              % 色の表示
+\usepackage{amsmath, amssymb}                    % 数式全般
+\usepackage{url}                                 % URL
+\usepackage{multicol, multirow,booktabs}         % 表作成
+\usepackage{hyperref}                            % ハイパーリンク
+\usepackage{pxjahyper}                           % ↑(u)pLaTeXのときのみかく
+\usepackage{titleps}                             % ノンブル・柱の変更
+\usepackage[section]{placeins}                   % \section毎に図を調整
+\usepackage[haranoaji]{pxchfon}                  % フォント指定（[ms]: MS, [ipaex]: IPAexフォント）
+\usepackage[deluxe]{otf}                         % 多書体化
+\usepackage[hmargin=25truemm,vmargin=25truemm]{geometry} % 余白設定（著者がもつ2022年度のWordのテンプレートに準拠）
+\usepackage[%
+  style=ieee,
+  sorting=none,
+  doi=false,
+  eprint=false,
+  url=true%
+]{biblatex}                                      % 参考文献をBibLaTeXでIEEEスタイルにする
+% ======== bibLaTeXのファイルとオプション設定 ============ %
+\addbibresource{references.bib} % bibファイルを拡張子つきで書く
+% ======== ハイパーリンクの設定 by hyperref ========= %
+\hypersetup{%
+  bookmarkstype = toc,
+  colorlinks = true,
+  urlcolor = black,
+  linkcolor = black,
+  citecolor = black,
+  linktocpage = true}
+% ======== フォント設定 by hyperref ========= %
+% \setboldminchofont{HaranoAjiMincho-Bold.otf}  % 原ノ味明朝Bold
+% \setboldgothicfont{HaranoAjiGothic-Bold.otf}  % 原ノ味ゴシックBold
+% \setxboldgothicfont{HaranoAjiGothic-Bold.otf} 
+\jlreqsetup{
+  caption_font=\normalsize,       % captionのフォント設定
+  caption_label_font=\normalsize  % captionのラベルフォント設定
+}
+% =======  ノンブル、柱の設定 (kut-sys-elec.clsで設定していたらどちらかコメントアウト) ======== %
+% == 目次での設定
+% ヘッダーに全ての情報を載せる
+\newpagestyle{headtypeTofCstyle}{
+  \headrule
+  \sethead[\scalebox{1.0}{\textbf{\thepage}}][][]
+      {}{}{\scalebox{1.0}{\textbf{\thepage}}}
+}
+% == 本文での設定
+% ヘッダーに全ての情報を載せる
+\newpagestyle{headtypestyle}{
+  \headrule
+  \sethead[\scalebox{1.0}{\textbf{\thepage}}][][第\thechapter 章 \chaptertitle]
+      {\thesection\quad\sectiontitle}{}{\scalebox{1.0}{\textbf{\thepage}}}
+}
+% =======  newcommand ======== %
+\newcommand{\img}{\mathrm{i}}                                   % 虚数単位
+\newcommand{\e}{\mathrm{e}}                                     % Napier数
+% =======  学位論文の報告者の情報 ======== %
+% -- 学位の確認 -- %
+\newcommand{\thesis}{修士学位論文}
+\newcommand{\dept}{高知工科大学大学院　工学研究科 \\ 基盤工学専攻　電子・光工学コース}
+
+% -- 報告者の情報 -- %
+\renewcommand{\title}{タイトル（和文）}
+\newcommand{\Etitle}{タイトル（英文）}
+\newcommand{\studentID}{1XXXXXX}
+\renewcommand{\author}{報告者の氏名}
+\newcommand{\advisor}{指導教員の氏名}
+\renewcommand{\date}{\today}
+% -- 表紙の空行による幅 [ \vskip -(2つのタイトルの行数-2)x20pt ] -- %
+\newcommand{\adjspace}{\vskip -0pt}  % タイトルが複数行なら調節のために行間を減らす
+
+% =======  表紙・本文のスタート ======== %
+\begin{document}
+
+% === 表紙 === %
+\include{cover}
+
+% === 目次 === %
+\setcounter{page}{0}\pagenumbering{roman}\pagestyle{headtypeTofCstyle}
+\tableofcontents
+\listoffigures
+\listoftables
+
+% === 表目次のページ番号がローマ数字にならないバグの回避 === %
+\newpage
+\clearpage
+
+% === 各種設定 === %
+\graphicspath{{./figures/}} % グラフのあるパス
+% main matterのノンブル・柱の設定
+\setcounter{page}{0}\pagenumbering{arabic}
+\pagestyle{headtypestyle}  % ヘッダーに全ての情報を載せる
+% ========================= 本文開始 =================================== %
+
+% == 本文
+\include{chapter1}
+\include{chapter2}
+
+% == 謝辞
+\addcontentsline{toc}{chapter}{謝辞}
+\include{acknowledgement}
+
+% == 参考文献
+\addcontentsline{toc}{chapter}{参考文献}
+\printbibliography[title={参考文献}]  % 参考文献を表示
+
+% == 付録
+\appendix  % 付録
+\include{appendixA}
+\include{appendixB}
+
+% ========================= 本文終了 =================================== %
+\end{document}
