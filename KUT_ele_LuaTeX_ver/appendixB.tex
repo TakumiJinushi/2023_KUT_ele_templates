@@ -1,0 +1,28 @@
+\chapter{日本語文献を用いる場合}
+このテンプレートからも分かるように，日本語文献のタイトルは太字となってしまう．
+これは，日本語の文献がBibLaTeX側で考慮されていないことによるエラーである．
+そこで，日本語でもIEEEスタイルで出力できるjIEEE.bstを使えば，タイトルが太字にならない．
+しかし，標準ではjIEEEスタイルは\TeX Liveで同梱されていないのでダウンロードする必要がある~\cite{jieeetran}．
+以下，jIEEEによる参考文献のスタイル変更の方法を記載する．
+
+\begin{enumerate}
+    \item jIEEEをWebサイト~\cite{jieeetran}からダウンロードしてZIPファイルを解凍する．
+    \item jIEEEtran-master/jIEEEtran にあるjIEEEtran.bstを作業フォルダ（main\_LuaTeX.texのあるフォルダ）に入れる．
+    \item main\_LuaTeX.texで次の箇所を編集する．
+        \begin{enumerate}
+            \item \textbackslash usepackage[...]\{biblatex\} を \textbackslash usepackage\{cite\} に変更する．
+            \item \textbackslash addbibresource\{references.bib\} を\% でコメントアウトする．
+            \item \textbackslash printbibliography[title={参考文献}] を\% でコメントアウトする．
+            \item 直前でコメントアウトした行の次の行で \textbackslash bibliography\{references\} と記述する．
+            \item 更に，次の行で \textbackslash bibliographystyle\{references\} と記述する．
+        \end{enumerate}
+    \item 一度 \LaTeX ファイルをコンパイルする．
+    \item references.bib で次の箇所を編集する．
+        \begin{enumerate}
+            \item 作成したPDFで大文字になるはずの箇所が小文字になっている場合，references.bib で該当箇所を
+                $1$重波括弧\{\}から$2$重波括弧\{\{\}\}にする．\\
+                （例. \{Accessed on Oct. 18, 2023\} を \{\{Accessed on Oct. 18, 2023\}\}に変更）
+            \item 著書の一部を記載している場合，バッククォート二つとダブルクォート二つで書名を囲う．\\
+                （例.［改定第$9$版］\LaTeXe 美文書作成入門が，``［改定第$9$版］\LaTeXe 美文書作成入門''となるはず）
+        \end{enumerate}
+\end{enumerate}

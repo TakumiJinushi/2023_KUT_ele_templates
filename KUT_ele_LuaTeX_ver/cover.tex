@@ -1,0 +1,70 @@
+% 表紙の設定です．
+% 参考：https://satolog.org/tex-template/
+
+\begin{titlepage}
+  \noindent \vskip 4.4cm
+  \begin{center}
+    \fontsize{0.9cm}{0.9cm}\selectfont
+    \textcolor{white}{empty}
+
+    \fontsize{24pt}{0pt}\selectfont
+    \textbf{\thesis} 
+
+    \fontsize{1.8cm}{1.8cm}\selectfont
+    \textcolor{white}{empty}
+
+    \fontsize{16pt}{20pt}\selectfont
+    \title
+
+    \fontsize{0.5cm}{0.5cm}\selectfont
+    \textcolor{white}{empty}
+
+    \fontsize{16pt}{20pt}\selectfont
+    \Etitle
+
+    \vskip 3mm
+
+    \hrule width 16.4cm % 本来は14.7cmだが，何故か印刷すると13.2cmになるため補正した
+    \fontsize{5.2cm}{5.2cm}\selectfont
+    \textcolor{white}{empty}
+
+    \adjspace % タイトルが複数行なら調節のために行間を減らす
+
+    \fontsize{14pt}{15pt}\selectfont
+    \textbf{報　告　者}
+
+    \fontsize{12pt}{1.0cm}\selectfont
+    学籍番号：\studentID
+    
+    \fontsize{12pt}{0.7cm}\selectfont
+    氏名：\author
+
+    \vskip -5mm
+    \hspace*{4cm}\hrulefill \hspace{4cm}
+
+    \fontsize{2cm}{2cm}\selectfont
+    \textcolor{white}{empty}
+
+    \fontsize{14pt}{14pt}\selectfont
+    \textbf{指　導　教　員}
+
+    \fontsize{12pt}{1.6cm}\selectfont
+    \advisor
+
+    \vskip -14mm
+    \hspace*{4cm}\hrulefill \hspace{4cm}
+
+    \fontsize{1.2cm}{1.2cm}\selectfont
+    \textcolor{white}{empty}
+
+    \fontsize{14pt}{0.9cm}\selectfont
+    \date
+
+    \fontsize{1.8cm}{1.8cm}\selectfont
+    \textcolor{white}{empty}
+
+    \fontsize{14pt}{20pt}\selectfont
+    \textbf{\dept}
+  \end{center}
+\end{titlepage}
+\setcounter{page}{-1}%  初期値1
