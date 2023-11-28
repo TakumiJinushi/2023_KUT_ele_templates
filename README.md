@@ -11,7 +11,7 @@
 
 ## 各種フォルダ・ファイル
 - KUT_ele_LuaTeX_ver: LuaTeXで動作するLaTeXテンプレートフォルダです．
-- KUT_ele_pLaTeX_ver: LuaTeXで動作するLaTeXテンプレートフォルダです．
+- KUT_ele_pLaTeX_ver: pLaTeXで動作するLaTeXテンプレートフォルダです．
 - README.md: このファイルのことです．
 
 ## 動作確認
