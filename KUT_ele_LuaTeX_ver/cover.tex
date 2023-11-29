@@ -1,70 +1,66 @@
 % 表紙の設定です．
-% 参考：https://satolog.org/tex-template/
+% 参考) TeXで表紙をカスタマイズして学位論文を書こう！ Accessed on Nov.29, 2023, URL: https://satolog.org/tex-template/
 
 \begin{titlepage}
-  \noindent \vskip 4.4cm
-  \begin{center}
-    \fontsize{0.9cm}{0.9cm}\selectfont
-    \textcolor{white}{empty}
+  \fontsize{0.1cm}{0.1cm}\selectfont
+  \textcolor{white}{empty} % 最初の改行を有効にするための補正
 
-    \fontsize{24pt}{0pt}\selectfont
-    \textbf{\thesis} 
+  \vskip 1.5cm  % 最初の改行, ??cm下げる \vskip ??cm
 
-    \fontsize{1.8cm}{1.8cm}\selectfont
-    \textcolor{white}{empty}
-
-    \fontsize{16pt}{20pt}\selectfont
-    \title
-
-    \fontsize{0.5cm}{0.5cm}\selectfont
-    \textcolor{white}{empty}
-
-    \fontsize{16pt}{20pt}\selectfont
-    \Etitle
-
-    \vskip 3mm
-
-    \hrule width 16.4cm % 本来は14.7cmだが，何故か印刷すると13.2cmになるため補正した
-    \fontsize{5.2cm}{5.2cm}\selectfont
-    \textcolor{white}{empty}
-
-    \adjspace % タイトルが複数行なら調節のために行間を減らす
-
-    \fontsize{14pt}{15pt}\selectfont
-    \textbf{報　告　者}
-
-    \fontsize{12pt}{1.0cm}\selectfont
-    学籍番号：\studentID
+  \centering % 以降centering
+  \fontsize{24pt}{0pt}\selectfont
+  \textbf{\thesis} 
     
-    \fontsize{12pt}{0.7cm}\selectfont
-    氏名：\author
+  \vskip 1.6cm
 
-    \vskip -5mm
-    \hspace*{4cm}\hrulefill \hspace{4cm}
+  \fontsize{16pt}{20pt}\selectfont
+  \title
 
-    \fontsize{2cm}{2cm}\selectfont
-    \textcolor{white}{empty}
+  \vskip 0.5cm
 
-    \fontsize{14pt}{14pt}\selectfont
-    \textbf{指　導　教　員}
+  \fontsize{16pt}{20pt}\selectfont
+  \Etitle
 
-    \fontsize{12pt}{1.6cm}\selectfont
-    \advisor
+  % \vskip 4mm
+  
+  \rule[2mm]{14.7cm}{.2mm} % 横線を\rule[depth]{width}{height}で
 
-    \vskip -14mm
-    \hspace*{4cm}\hrulefill \hspace{4cm}
+  \vskip 3.2cm
 
-    \fontsize{1.2cm}{1.2cm}\selectfont
-    \textcolor{white}{empty}
+  \adjspace % タイトルが複数行なら調節のために行間を減らす
 
-    \fontsize{14pt}{0.9cm}\selectfont
-    \date
+  \fontsize{14pt}{15pt}\selectfont
+  \textbf{報　告　者}
+    
+  \fontsize{12pt}{1.0cm}\selectfont
+  学籍番号：\studentID
+    
+  \fontsize{12pt}{0.7cm}\selectfont
+  氏名：\author
 
-    \fontsize{1.8cm}{1.8cm}\selectfont
-    \textcolor{white}{empty}
+  \vskip -2mm
+  \rule[0mm]{7cm}{.2mm}
 
-    \fontsize{14pt}{20pt}\selectfont
-    \textbf{\dept}
-  \end{center}
+  \vskip 1.5cm
+
+  \fontsize{14pt}{14pt}\selectfont
+  \textbf{指　導　教　員}
+
+  \vskip 7mm
+
+  \fontsize{12pt}{12pt}\selectfont
+  \advisor
+
+  \rule[0mm]{7cm}{.2mm}
+
+  \vskip 1.9cm
+
+  \fontsize{14pt}{0.9cm}\selectfont
+  \date
+
+  \vskip 1.9cm
+
+  \fontsize{14pt}{20pt}\selectfont
+  \textbf{\dept}
 \end{titlepage}
 \setcounter{page}{-1}%  初期値1
