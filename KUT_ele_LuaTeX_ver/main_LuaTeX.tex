@@ -13,7 +13,7 @@
 \usepackage[luatex,pdfencoding=auto]{hyperref}   % ハイパーリンク
 \usepackage{titleps}                             % ノンブル・柱の変更
 \usepackage[section]{placeins}                   % \section毎に図を調整
-\usepackage[hmargin=25truemm,vmargin=25truemm]{geometry} % 余白設定（著者がもつ2022年度のWordのテンプレートに準拠）
+\usepackage[margin=25truemm]{geometry}           % 余白設定（2023年度 Wordのテンプレートに準拠）
 \usepackage[%
   style=ieee,
   sorting=none,
@@ -46,7 +46,14 @@
 % ヘッダーに全ての情報を載せる
 \newpagestyle{headtypestyle}{
   \headrule
-  \sethead[\scalebox{1.0}{\textbf{\thepage}}][][第\thechapter 章 \chaptertitle]
+  \sethead[\scalebox{1.0}{\textbf{\thepage}}][][第\thechapter 章　\chaptertitle]
+      {\thesection\quad\sectiontitle}{}{\scalebox{1.0}{\textbf{\thepage}}}
+}
+% == 付録での設定
+% ヘッダーに全ての情報を載せる
+\newpagestyle{headtypestyleAp}{
+  \headrule
+  \sethead[\scalebox{1.0}{\textbf{\thepage}}][][付録\thechapter　\chaptertitle]
       {\thesection\quad\sectiontitle}{}{\scalebox{1.0}{\textbf{\thepage}}}
 }
 % =======  newcommand ======== %
@@ -54,8 +61,8 @@
 \newcommand{\e}{\mathrm{e}}                                     % Napier数
 % =======  学位論文の報告者の情報 ======== %
 % -- 学位の確認 -- %
-\newcommand{\thesis}{修士学位論文}
-\newcommand{\dept}{高知工科大学大学院　工学研究科 \\ 基盤工学専攻　電子・光工学コース}
+\newcommand{\thesis}{修士論文}
+\newcommand{\dept}{高知工科大学大学院工学研究科 \\ 基盤工学専攻○○○○工学コース}
 
 % -- 報告者の情報 -- %
 \renewcommand{\title}{タイトル（和文）}
@@ -76,8 +83,8 @@
 % === 目次 === %
 \setcounter{page}{0}\pagenumbering{roman}\pagestyle{headtypeTofCstyle}
 \tableofcontents
-\listoffigures
-\listoftables
+% \listoffigures
+% \listoftables
 
 % === 表目次のページ番号がローマ数字にならないバグの回避 === %
 \newpage
@@ -104,6 +111,7 @@
 
 % == 付録
 \appendix  % 付録
+\pagestyle{headtypestyleAp}  % ヘッダーに全ての情報を載せる
 \include{appendixA}
 \include{appendixB}
 
