@@ -20,6 +20,9 @@ Overleafは世界で使われる有名なWebサービスで，CloudLaTeXは株�
 また，テンプレートはLuaTeX版とpLaTeX版の内，Unicodeが使える**LuaTeX版をお勧め**します．
 とはいえ，もし学位論文の分量が多くてランタイムエラーが起こるなら**pLaTeX版**を試してみてください．
 
+### 学部生の方へ
+元の表紙が修士論文用のため、卒業論文用の表紙にするには、/卒業論文用の表紙/cover.texに元のcover.texから差し替えて下さい。
+
 ## 各種フォルダ・ファイル
 - KUT_ele_LuaTeX_ver: LuaTeXで動作するLaTeXテンプレートフォルダです．
 - KUT_ele_pLaTeX_ver: pLaTeXで動作するLaTeXテンプレートフォルダです．
@@ -42,7 +45,7 @@ Overleafは世界で使われる有名なWebサービスで，CloudLaTeXは株�
 4. LaTeXの基本的な使い方の説明（面倒すぎるからできなかった）
 
 ## 問い合わせ先
-高知工科大学大学院 電子・光工学専攻 2年　地主拓未 (2023年12月現在)
+高知工科大学大学院 電子・光工学コース 2年　地主拓未 (2023年12月現在)
 
 E-mail: takumi.jinushi (あっと) gmail.com
 
