@@ -1,0 +1,63 @@
+% 表紙の設定です．
+% 参考) TeXで表紙をカスタマイズして学位論文を書こう！ Accessed on Nov.29, 2023, URL: https://satolog.org/tex-template/
+
+\begin{titlepage}
+  \fontsize{0.1cm}{0.1cm}\selectfont
+  \textcolor{white}{emtruepty} % 最初の改行を有効にするための補正
+
+  \vskip 1.7cm  % 最初の改行, ??cm下げる \vskip ??cm
+
+  \centering % 以降centering
+  \fontsize{24truept}{0truept}\selectfont
+  \textbf{\thesis}
+    
+  \vskip 1.9cm
+
+  \fontsize{16truept}{20truept}\selectfont
+  \title
+
+  \vskip 0.95cm
+
+  % \vskip 4mm
+  
+  \rule[2mm]{14.7cm}{.2mm} % 横線を\rule[detruepth]{width}{height}で
+
+  \vskip 3.2cm
+
+  \adjspace % タイトルが複数行なら調節のために行間を減らす
+
+  \fontsize{14truept}{15truept}\selectfont
+  \textbf{報　告　者}
+    
+  \fontsize{12truept}{1.0cm}\selectfont
+  学籍番号：\studentID
+    
+  \fontsize{12truept}{0.7cm}\selectfont
+  氏名：\author
+
+  \vskip -2mm
+  \rule[0mm]{7cm}{.2mm}
+
+  \vskip 1.5cm
+
+  \fontsize{14truept}{14truept}\selectfont
+  \textbf{指　導　教　員}
+
+  \vskip 7mm
+
+  \fontsize{12truept}{12truept}\selectfont
+  \advisor
+
+  \rule[0mm]{7cm}{.2mm}
+
+  \vskip 1.9cm
+
+  \fontsize{14truept}{0.9cm}\selectfont
+  \date
+
+  \vskip 1.9cm
+
+  \fontsize{14truept}{20truept}\selectfont
+  \textbf{\dept}
+\end{titlepage}
+\setcounter{page}{-1}%  初期値1
