@@ -1,38 +1,56 @@
-% ======== 学位論文 (ver0.003) ========= %
+% ======== 学位論文 (ver1.1.1) ========= %
 \RequirePackage{plautopatch}
 \RequirePackage[l2tabu, orthodox]{nag}           % 古いものを一掃
+% \documentclass[luatex, report, a4paper, 12pt, openany, twoside]{jlreq}  % pLaTeXと揃える場合
 \documentclass[luatex, a4paper, 12pt, openany, twoside]{ltjsreport}
 % =======  プリアンブル ======== %
 % \usepackage{luatexja}                            % LuaTeX-ja
+% \usepackage{luatexja-fontspec}                   % LuaTeX-jaでのフォント変更
+% \usepackage[ipaex]{luatexja-preset}              % LuaTeX-jaでのフォント変更
 \usepackage{graphicx}                            % グラフ描画
 \usepackage{amsmath, amssymb}                    % 数式全般
 \usepackage{xcolor}                              % 色を付ける
 \usepackage{url}                                 % URL
 \usepackage{multicol, multirow,booktabs}         % 表作成
-% \usepackage{luatexja-fontspec}                   % LuaTeX-jaでのフォント変更
 \usepackage[luatex,pdfencoding=auto]{hyperref}   % ハイパーリンク
 \usepackage{titleps}                             % ノンブル・柱の変更
 \usepackage[section]{placeins}                   % \section毎に図を調整
 \usepackage[margin=25truemm]{geometry}           % 余白設定（2023年度 Wordのテンプレートに準拠）
+% \usepackage{cite}                                % （↓があるときはコメントアウト）参考文献をBibTeXでIEEEスタイルにする
 \usepackage[%
-  style=ieee,
+  bibstyle=ieee,
+  citestyle=numeric-comp,
   sorting=none,
   doi=false,
   eprint=false,
   url=true%
-]{biblatex}                                      % 参考文献をBibLaTeXでIEEEスタイルにする
+]{biblatex}                                      % （↑があるときはコメントアウト）参考文献をBibLaTeXでIEEEスタイルにする
 % ======== bibLaTeXのファイルとオプション設定 ============ %
 \addbibresource{references.bib} % bibファイルを拡張子つきで書く
-% ======== フォント設定 by hyperref ========= %
-\hypersetup{%
-  bookmarkstype = toc,
-  colorlinks = true,
-  urlcolor = black,
-  linkcolor = black,
-  citecolor = black,
-  linktocpage = true}
+% ======== ハイパーリンクの設定 by hyperref ========= %
+\hypersetup{
+  setpagesize=false,
+  bookmarks=true,
+  bookmarksnumbered=true,
+  bookmarkstype=toc,
+  colorlinks=true,
+  urlcolor=black,
+  linkcolor=black,
+  citecolor=black
+}
+% ======== jlreqの各種設定 ========= %
+% % 図・表のキャプションの見た目変更
+% \jlreqsetup{
+%   caption_font=\normalsize,       % captionのフォント設定
+%   caption_label_font=\normalsize  % captionのラベルフォント設定
+% }
+% ↓標準のスタイルの変更例
+% \ModifyHeading{chapter}{font=\huge\gtfamily\bfseries}
+% \ModifyHeading{section}{font=\Large\gtfamily\bfseries}
+% \ModifyHeading{subsection}{font=\large\gtfamily\bfseries}
+% \ModifyHeading{subsubsection}{font=\normalsize\gtfamily\bfseries}
 % ======== フォント設定 by luatexja-fontspec ========= %
-% \setmainfont[Ligatures=TeX]{Times New Roman}
+% \setmainfont[Ligatures={Rare,TeX}]{Times New Roman}
 % \setmainjfont[BoldFont=Yu Gothic]{Yu Mincho}
 % =======  ノンブル、柱の設定 ======== %
 % == 目次での設定
@@ -49,6 +67,13 @@
   \sethead[\scalebox{1.0}{\textbf{\thepage}}][][第\thechapter 章　\chaptertitle]
       {\thesection\quad\sectiontitle}{}{\scalebox{1.0}{\textbf{\thepage}}}
 }
+% == 参考文献・での設定
+% ヘッダーに全ての情報を載せる
+\newpagestyle{headtypestylePlain}{
+  \headrule
+  \sethead[\scalebox{1.0}{\textbf{\thepage}}][][\chaptertitle]
+      {}{}{\scalebox{1.0}{\textbf{\thepage}}}
+}
 % == 付録での設定
 % ヘッダーに全ての情報を載せる
 \newpagestyle{headtypestyleAp}{
@@ -56,9 +81,9 @@
   \sethead[\scalebox{1.0}{\textbf{\thepage}}][][付録\thechapter　\chaptertitle]
       {\thesection\quad\sectiontitle}{}{\scalebox{1.0}{\textbf{\thepage}}}
 }
-% =======  newcommand ======== %
-\newcommand{\img}{\mathrm{i}}                                   % 虚数単位
-\newcommand{\e}{\mathrm{e}}                                     % Napier数
+% =======  newcommandの使用例 ======== %
+\newcommand{\img}{\mathrm{i}}         % 虚数単位
+\newcommand{\e}{\mathrm{e}}           % Napier数
 % =======  学位論文の報告者の情報 ======== %
 % -- 学位の確認 -- %
 \newcommand{\thesis}{修士論文}
@@ -94,7 +119,7 @@
 \graphicspath{{./figures/}} % figuresをデフォルトのフォルダにする
 % main matterのノンブル・柱の設定
 \setcounter{page}{0}\pagenumbering{arabic}
-\pagestyle{headtypestyle}  % ヘッダーに全ての情報を載せる
+\pagestyle{headtypestyle}  % ノンブル・柱の設定
 % ========================= 本文開始 =================================== %
 
 % == 本文
@@ -102,16 +127,23 @@
 \include{chapter2}
 
 % == 謝辞
+\pagestyle{headtypestylePlain} % ノンブル・柱の設定
 \addcontentsline{toc}{chapter}{謝辞}
 \include{acknowledgement}
 
 % == 参考文献
-\addcontentsline{toc}{chapter}{参考文献}
-\printbibliography[title={参考文献}]  % 参考文献を表示
+\pagestyle{headtypestylePlain} % ノンブル・柱の設定
+\printbibliography[title={参考文献}]  % 参考文献を表示 (biblatex)
+% \bibliographystyle{jIEEEtran}  % 参考文献を表示 (bibtex, jIEEEtran.bstを使う場合)
+% \bibliography{references}      % 参考文献を表示 (bibtex, .bibは省略)
+
+% == ヘッダー・フッターのバグ回避
+\newpage
+\clearpage
 
 % == 付録
 \appendix  % 付録
-\pagestyle{headtypestyleAp}  % ヘッダーに全ての情報を載せる
+\pagestyle{headtypestyleAp}  % ノンブル・柱の設定
 \include{appendixA}
 \include{appendixB}
 
