@@ -35,7 +35,7 @@ Overleafは世界で使われる有名なWebサービスで，CloudLaTeXは株�
 - [CloudLaTeX](https://cloudlatex.io)で2023年11月現在確認済み
 
 ## 連絡事項
-なし
+FAQとQ&Aの作成中．メールや[Webex](https://www.webex.com/ja/index.html)で質問受付中です！
 
 ## 作成者の能力不足でできなかったところ
 以下の箇所やそれ以外で気になったところを変えることのできる人募集です！！！というか作って配布して欲しいです！！！
