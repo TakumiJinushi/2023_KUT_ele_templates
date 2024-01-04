@@ -1,0 +1,15 @@
+# Fdb version 3
+["latex"] 1703579664 "c:/Users/kodai/2023_KUT_ele_templates/Github_setting/github.tex" "out/github.dvi" "github" 1703579664
+  "c:/Users/kodai/2023_KUT_ele_templates/Github_setting/github.tex" 1703579661 2248 97901cfffc3127dac4214dc27465ed07 ""
+  "c:/texlive/2022/texmf-dist/tex/latex/cite/cite.sty" 1666461538 26218 19edeff8cdc2bcb704e8051dc55eb5a7 ""
+  "c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def" 1666463227 36250 66d5e47eefe2af956bb2c9f39846804f ""
+  "c:/texlive/2022/texmf-dist/tex/platex/jsclasses/jsarticle.cls" 1666463120 60978 6c83c0f21d2c1434328c9e364000f6ff ""
+  "c:/texlive/2022/texmf-dist/web2c/texmf.cnf" 1666460711 40171 cdab547de63d26590bebb3baff566530 ""
+  "c:/texlive/2022/texmf-var/web2c/pdftex/latex.fmt" 1666466223 3059021 f6d10086f8f0b871d39dda875928c65e ""
+  "c:/texlive/2022/texmf.cnf" 1666466145 713 e69b156964470283e0530f5060668171 ""
+  "github.tex" 1703579661 2248 97901cfffc3127dac4214dc27465ed07 ""
+  "out/github.aux" 1703579663 8 a94a2480d3289e625eea47cd1b285758 "latex"
+  (generated)
+  "out/github.aux"
+  "out/github.dvi"
+  "out/github.log"
