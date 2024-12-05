@@ -1,0 +1,5 @@
+[0] Config.pm:306> INFO - This is Biber 2.18
+[0] Config.pm:309> INFO - Logfile is 'out/main_pLaTeX.blg'
+[90] biber-MSWIN32:340> INFO - === 
+[124] Utils.pm:410> ERROR - out/main_pLaTeX.bcf is malformed, last biblatex run probably failed. Deleted out/main_pLaTeX.bbl
+[124] Biber.pm:135> INFO - ERRORS: 1
