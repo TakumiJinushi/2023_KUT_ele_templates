@@ -11,17 +11,28 @@
 ## 各種フォルダ・ファイル
 - figures: 図が入っているフォルダです
   - biblatex_settings.png: main_LuaTeX.tex内のbiblatexの設定をスクリーンショットで撮影したものです
+  - Cmd_info.png: コマンドプロンプト上で```C:\Users\...>latex```を実行して正常に動作するかを確認した図です
+  - Install_deisplay_1.png: TeXLiveのインストール画面です
+  - Install_deisplay_3.png: TeXLiveのインストール画面です
+  - Installer_setting.png: TeXLive2023のインストール画面です
+  - Istall_deisplay_2.png: TeXLiveのインストール画面です
   - header.png: ヘッダー・フッターの出力確認の図です
   - method.png: appendixA.tex内の手順を図示したスクリーンショットです
   - nomble.png: main_LuaTeX.tex内のヘッダー・フッターの設定をスクリーンショットで撮影したものです
+  - open_code_from_current_directory: VSCodeで作業したいディレクトリのスクリーンショットです
+  - open_code.png: VSCodeのインストール中に現れる画面のスクリーンショットです
+  - open_work_dir.png: 作業ディレクトリをVSCodeで開いた時のスクリーンショットです
   - picture.pdf: method.pngでは描画.pdfだったが，エラー回避のためにpicture.pdfに変更
   - ref_series.png: 参考文献[3]，[4]の引用順を確認する図です．
+  - Scheme.png: TeXLive2023のインストール画面でのスキームの設定です
+  - TeX_installer.png: TeXLiveのインストール画面です
   - verification_of_graduation.png: 学位論文報告者の情報を記載する箇所のスクリーンショットです
 
 - .latexmkrc: ローカルで動かすためのファイルです．オンラインで行なう場合は無視して下さい．
 - acknowledgement.tex: 謝辞を書くTeXファイルです．感謝を述べましょう
 - appendixA.tex: 付録Aの内容を記載したTeXファイルです
 - appendixB.tex: 付録Bの内容を記載したTeXファイルです
+- appendixC.tex: 付録Cの内容を記載したTeXファイルです
 - chapter1.tex: 第1章の内容を記載したTeXファイルです
 - chapter2.tex: 第2章の内容を記載したTeXファイルです
 - cover.tex: 表紙の制御を行なっているTeXファイルです
@@ -33,6 +44,11 @@
 ## 動作確認
 - Windows10, Windows11での[Visual Studio Code](https://code.visualstudio.com/)（[TeX Live](https://texwiki.texjp.org/?TeX%20Live)2023でインストールしていることが前提）．Visual Studio Codeはただのエディタなので他でも設定をすれば動くと思います．
 - [Overleaf](https://www.overleaf.com), [CloudLaTeX](https://cloudlatex.io)で2023年11月現在確認済み
+  - Overleafで動作させるときにTimeoutエラーが出るかもしれませんが，以下のように対処できます。（2024年12月5日）
+    - プレビュー画面の左上にある「リコンパイル」から，「コンパイルモード」，「ファスト[draft]」に変更
+    - 再度コンパイル
+    - 再度「リコンパイル」から，「コンパイルモード」，「ノーマル」に戻す
+    - またコンパイルすると正常に動作
 
 ## 各種リンク
 上述の内，重要なリンクを記載しておきます．
@@ -62,7 +78,7 @@ TeXでの執筆時に役立つリンク集（2023年11月現在）
 
 
 ## 連絡先
-高知工科大学大学院 電子・光工学専攻 2年　地主拓未 (2023年12月現在)
+高知工科大学大学院 工学研究科 基盤工学コース 1年　地主拓未 (2024年12月現在)
 E-mail: takumi.jinushi (あっと) gmail.com
 
 # 履歴
@@ -78,3 +94,7 @@ E-mail: takumi.jinushi (あっと) gmail.com
   - ノンブル・柱のバグ修正
   - 誤字の訂正・説明の変更
   - ```README.md```の[biblatex で日本語文献をサポート](https://gist.github.com/idiotWu/4879a88a3e34618cc8215a43ba2e9fbd)の説明を丁寧にした．
+- 2024年12月 5日 v.1.2.0作成
+  - [kodaimai](https://github.com/kodaimai)様によるご提案のもと，appendixCを追加し，```out```フォルダの削除と```KUT_ele_LuaTeX_ver.pdf```を更新
+  - ```main_LuaTeX.tex```を```main.tex```に変更
+  - 誤字の訂正
